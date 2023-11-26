@@ -1,0 +1,47 @@
+<div>
+    <div class="container col-5 mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    Crear Cliente
+                    <a routerLink="/client/index" class="btn btn-danger float-end">Volver</a>
+                </h4>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="saveClient()">
+                    <div class="mb-3">
+                        <label>Nombre</label>
+                        <input type="text" [(ngModel)]="client.name" name="nombres" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Apellido Paterno</label>
+                        <input type="text" [(ngModel)]="client.paternal" name="paternal" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Apellido Materno</label>
+                        <input type="text" [(ngModel)]="client.maternal" name="maternal" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Tipode de Documento</label>
+                        <input type="text" [(ngModel)]="client.documentType" name="documentType" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Numero de Documento</label>
+                        <input type="text" [(ngModel)]="client.idNumber" name="idNumber" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Fecha de Nacimiento</label>
+                        <input type="text" [(ngModel)]="client.date" name="date" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Genero</label>
+                        <input type="text" [(ngModel)]="client.gender" name="gender" class="form-control">
+                    </div>
+                    <div class="mb-2">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

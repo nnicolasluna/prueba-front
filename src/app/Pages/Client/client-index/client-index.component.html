@@ -1,0 +1,42 @@
+<div>
+    <div class="container col-7">
+        <div class=" mt-5 card ">
+            <div class="card-header">
+                <h4>
+                    Lista de Clientes
+                    <a routerLink="/client/create" class="btn btn-primary float-end">Agregar Cliente</a>
+                </h4>
+            </div>
+            <div class="card-body">
+                <table class="table tabl-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombres</th>
+                            <th>Ap.Paterno</th>
+                            <th>Ap. Materno</th>
+                            <th>Tipo Doc.</th>
+                            <th>Nro Documento</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let client of clients">
+                            <td>{{client.id}}</td>
+                            <td>{{client.name}}</td>
+                            <td>{{client.paternal}}</td>
+                            <td>{{client.maternal}}</td>
+                            <td>{{client.documentType}}</td>
+                            <td>{{client.idNumber}}</td>
+                            <th>
+                                <a routerLink="/client/show/{{client.id}}" class="btn btn-primary">Ver</a>
+                                <a routerLink="/client/edit/{{client.id}}" class="btn btn-success mx-2">Editar</a>
+                                <button type="button" class="btn btn-danger" (click)="deleteClient($event,client.id)">Borrar</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

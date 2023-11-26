@@ -1,0 +1,59 @@
+<div>
+    <div class="container col-6 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    Datos de Cliente
+                    <a routerLink="/client/index" class="btn btn-danger float-end">Volver</a>
+                    <a routerLink="/vehicle/create/{{client.id}}"  class="btn  me-2 btn-primary float-end">Añadir Vehiculo</a>
+                </h4>
+            </div>
+            <div class="card-body">
+                <table width="100%">
+                    <tr>
+                        <td><b>Nombre:</b></td>
+                        <td>{{client.name}}</td>
+                        <td><b>Apellidos:</b></td>
+                        <td>{{client.paternal}} {{client.maternal}}</td>
+                    </tr>
+                    <tr>
+                        <td><b>Nro. Ident:</b></td>
+                        <td>{{client.idNumber}}</td>
+                        <td><b>Genero:</b></td>
+                        <td>{{client.gender}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="card mt-3">
+            <div class="card-body">
+                <table class="table tabl-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Año</th>
+                            <th>Licencia</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vehicle of vehicles">
+                            <td>{{vehicle.id}}</td>
+                            <td>{{vehicle.make}}</td>
+                            <td>{{vehicle.model}}</td>
+                            <td>{{vehicle.year}}</td>
+                            <td>{{vehicle.license}}</td>
+                            <th>
+                                <a routerLink="/vehicle/edit/{{vehicle.id}}" class="btn btn-success mx-2">Editar</a>
+                                <button type="button" class="btn btn-danger"
+                                    (click)="deleteVehicle($event,vehicle.id)">Borrar</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

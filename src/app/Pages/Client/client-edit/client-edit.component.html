@@ -1,0 +1,48 @@
+<div>
+    <div class="container col-5 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    Editar Client
+                    <a routerLink="/client/index" class="btn btn-danger float-end">Volver</a>
+                </h4>
+            </div>
+            <div class="card-body">
+                 <form (ngSubmit)="updateClient()">
+                    <div class="mb-3">
+                        <label>Nombre</label>
+                        <input type="text" [(ngModel)]="client.name" name="name" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Apellido Paterno</label>
+                        <input type="text" [(ngModel)]="client.paternal" name="paternal" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Apellido Materno</label>
+                        <input type="text" [(ngModel)]="client.maternal" name="maternal" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Tipo de Documento</label>
+                        <input type="text" [(ngModel)]="client.documentType" name="documentType" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Numero de Identificacion</label>
+                        <input type="text" [(ngModel)]="client.idNumber" name="idNumber" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Fecha de Nacimiento</label>
+                        <input type="text" [(ngModel)]="client.date" name="date" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Genero</label>
+                        <input type="text" [(ngModel)]="client.gender" name="gender" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                    </div>
+                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+

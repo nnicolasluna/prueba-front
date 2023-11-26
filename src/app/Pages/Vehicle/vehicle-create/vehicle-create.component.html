@@ -1,0 +1,36 @@
+<div>
+    <div class="container col-5 mt-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    Añadir Vehiculo
+                    <a routerLink="/client/index" class="btn btn-danger float-end">Volver</a>
+                </h4>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="saveVehicle()">
+                    <div class="mb-3">
+                        <label>Marca</label>
+                        <input type="text" [(ngModel)]="make" name="nombres" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Modelo</label>
+                        <input type="text" [(ngModel)]="model" name="paternal" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>Año</label>
+                        <input type="text" [(ngModel)]="year" name="maternal" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label>License</label>
+                        <input type="text" [(ngModel)]="license" name="documentType" class="form-control">
+                    </div>
+
+                    <div class="mb-2">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

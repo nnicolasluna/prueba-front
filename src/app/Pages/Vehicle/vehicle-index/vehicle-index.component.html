@@ -1,0 +1,39 @@
+<div>
+    <div class="container col-5">
+        <div class=" mt-5 card ">
+            <div class="card-header">
+                <h4>
+                    Lista de Vehiculos
+                    <a routerLink="/client/index" class="btn btn-primary float-end">Ir a Clientes</a>
+                </h4>
+            </div>
+            <div class="card-body">
+                <table class="table tabl-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Año</th>
+                            <th>Licencia</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let vehicle of vehicles">
+                            <td>{{vehicle.id}}</td>
+                            <td>{{vehicle.make}}</td>
+                            <td>{{vehicle.model}}</td>
+                            <td>{{vehicle.year}}</td>
+                            <td>{{vehicle.license}}</td>
+                            <th>
+                              <!--   <a routerLink="/vehicle/edit/{{vehicle.id}}" class="btn btn-success mx-2">Editar</a> -->
+                                <button type="button" class="btn btn-danger" (click)="deleteVehicle($event,vehicle.id)">Borrar</button>
+                            </th>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
